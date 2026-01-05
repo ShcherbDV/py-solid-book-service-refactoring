@@ -1,14 +1,17 @@
 from app.book import Book
+from app.displays import display
+from app.printers import print_book
+from app.serializers import serialize
 
 
 def main(book: Book, commands: list[tuple[str, str]]) -> None | str:
     for cmd, method_type in commands:
         if cmd == "display":
-            book.display(method_type)
+            display(book, method_type)
         elif cmd == "print":
-            book.print_book(method_type)
+            print_book(book, method_type)
         elif cmd == "serialize":
-            return book.serialize(method_type)
+            return serialize(book, method_type)
 
 
 if __name__ == "__main__":

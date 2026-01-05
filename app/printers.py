@@ -1,14 +1,12 @@
 from app.book import Book
 
 
-class BookPrinter(Book):
-
-    def print_book(self, print_type: str) -> None:
-        if print_type == "console":
-            print(f"Printing the book: {self.title}...")
-            print(self.content)
-        elif print_type == "reverse":
-            print(f"Printing the book in reverse: {self.title}...")
-            print(self.content[::-1])
-        else:
-            raise ValueError(f"Unknown print type: {print_type}")
+def print_book(book: Book, print_type: str) -> None:
+    if print_type == "console":
+        print(f"Printing the book: {book.title}...")
+        print(book.content)
+    elif print_type == "reverse":
+        print(f"Printing the book in reverse: {book.title}...")
+        print(book.content[::-1])
+    else:
+        raise ValueError(f"Unknown print type: {print_type}")
